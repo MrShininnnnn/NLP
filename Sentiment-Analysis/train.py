@@ -78,7 +78,7 @@ def unigram_sgd(train_text, train_label, test_text, test_label):
 	result_unigram = clf.predict(test_v)
 	output_txt(result_unigram, uni_output)
 	score = evaluate(result_unigram, test_label)
-	print("The score based on unigram:", score)
+	print("The score based on unigram:", score, "%")
 	# unigram_tfidf
 	tf = TfidfTransformer()
 	train_v = tf.fit_transform(train_v)
@@ -87,7 +87,7 @@ def unigram_sgd(train_text, train_label, test_text, test_label):
 	result_unigram_tfidf = clf.predict(test_v)
 	output_txt(result_unigram_tfidf, unigramtfidf_output)
 	score = evaluate(result_unigram_tfidf, test_label)
-	print("The score based on unigram_tfidf:", score)
+	print("The score based on unigram_tfidf:", score, "%")
 
 def bigram_sgd(train_text, train_label, test_text, test_label):
 	# bigram
@@ -98,7 +98,7 @@ def bigram_sgd(train_text, train_label, test_text, test_label):
 	result_bigram = clf.predict(test_v)
 	output_txt(result_bigram, bi_output)
 	score = evaluate(result_bigram, test_label)
-	print("The score based on bigram:", score)
+	print("The score based on bigram:", score, "%")
 	# bigram_tfidf
 	tf = TfidfTransformer()
 	train_v = tf.fit_transform(train_v)
@@ -107,7 +107,7 @@ def bigram_sgd(train_text, train_label, test_text, test_label):
 	result_bigram_tfidf = clf.predict(test_v)
 	output_txt(result_bigram_tfidf, bigramtfidf_output)
 	score = evaluate(result_bigram_tfidf, test_label)
-	print("The score based on bigram_tfidf:", score)
+	print("The score based on bigram_tfidf:", score, "%")
 
 def output_txt(result, txt_name):
 
