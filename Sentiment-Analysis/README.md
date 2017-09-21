@@ -28,7 +28,7 @@ The results will be restored as:
 + output/bigramtfidf.output.txt
 
 ## Score:
-+ The score based on unigram: 84.976
-+ The score based on unigram_tfidf: 87.26
-+ The score based on bigram: 85.26
-+ The score based on bigram_tfidf: 85.948
++ The score based on unigram: 84.976%
++ The score based on unigram_tfidf: 87.26%
++ The score based on bigram: 85.26%
++ The score based on bigram_tfidf: 85.948%
