@@ -1,0 +1,1 @@
+To store dictionaries for en and zh.
