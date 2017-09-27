@@ -10,7 +10,7 @@ from module.path import *
 
 def sgm_to_str(sgm_file, str_file):
 	
-	raw_data = open(sgm_file, 'r').read()
+	raw_data = open(sgm_file, 'r', encoding = 'utf-8').read()
 	f = open(str_file, 'w+')
 	soup = BeautifulSoup(raw_data, 'lxml')
 	for sample in soup.find_all('seg'):
