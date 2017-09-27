@@ -1,5 +1,4 @@
 import os
-import re
 import json
 from collections import Counter
 from tqdm import tqdm
@@ -18,27 +17,18 @@ def sgm_to_str(sgm_file, str_file):
 		f.write(sen.strip() + "\n")
 	f.close()
 
-def str_to_dict(str_file, dict_file, lan):
+def str_to_dict(str_files_list, dict_file, lan):
 
-	print("Generating from %s to %s ..." %(str_file, dict_file))
-	# c = 0
 	PREFIX_VOCAB = ["<PAD>", "<UNK>", "<GO>", "<EOS>"]
-	if lan == 'en':
-		vocab_path = en_dict
-	elif lan == 'zh':
-		vocab_path = zh_dict
+	vocab_path = dict_file
 	vocab_counter = Counter()
-	with open(str_file, 'r', encoding = 'utf-8') as infile:
-		for line in tqdm(infile, total = get_lines_num(str_file)):
-			if lan == 'en':
-				tokens = word_tokenize(line)
-			elif lan == 'zh':
-				# tokens = [w for w in line.rstrip()]
-				tokens = jieba.cut(line)
-			vocab_counter.update(tokens)
-			# c += 1
-			# if c == 1000:
-			# 	break
+	for str_file in str_files_list:
+		print("Generating from %s to %s ..." %(str_file, dict_file))
+		with open(str_file, 'r', encoding = 'utf-8') as infile:
+			for line in tqdm(infile, total = get_lines_num(str_file)):
+				if lan == 'en': tokens = word_tokenize(line)
+				elif lan == 'zh': tokens = jieba.cut(line)
+				vocab_counter.update(tokens)
 	vocab_list = [key for key, value in vocab_counter.items() if value > 0]
 	vocab_list = PREFIX_VOCAB + vocab_list
 	save_vocabulary(vocab_list, dict_file)
@@ -62,4 +52,3 @@ def save_vocabulary(vocab_list, vocab_path):
 def get_lines_num(file_path):
 	with open(file_path, 'r', encoding = 'utf-8') as f:
 		return sum(1 for _ in f)
-
