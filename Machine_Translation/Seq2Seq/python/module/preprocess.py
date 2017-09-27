@@ -1,7 +1,6 @@
 import os
 import re
 import json
-import mmap
 from collections import Counter
 from tqdm import tqdm
 import jieba
@@ -61,10 +60,6 @@ def save_vocabulary(vocab_list, vocab_path):
             fh.write("{}\t{}\n".format(vocab, idx))
 
 def get_lines_num(file_path):
-	fp = open(file_path, "r+")
-	buf = mmap.mmap(fp.fileno(), 0)
-	lines = 0
-	while buf.readline():
-		lines += 1
-	return lines 
+	with open(file_path, 'r', encoding = 'utf-8') as f:
+		return sum(1 for _ in f)
 
