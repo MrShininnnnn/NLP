@@ -1,0 +1,1 @@
+A simple Seq2Seq model doing machine translation based on https://challenger.ai/ data set.
