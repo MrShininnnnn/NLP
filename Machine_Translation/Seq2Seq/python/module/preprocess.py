@@ -21,6 +21,7 @@ def sgm_to_str(sgm_file, str_file):
 
 def str_to_dict(str_file, dict_file, lan):
 
+	print("Generating from %s to %s ..." %(str_file, dict_file))
 	# c = 0
 	PREFIX_VOCAB = ["<PAD>", "<UNK>", "<GO>", "<EOS>"]
 	if lan == 'en':
