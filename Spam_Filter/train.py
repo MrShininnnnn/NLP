@@ -6,7 +6,6 @@ import csv
 import string
 import numpy as np
 import pandas as pd
-import random
 from collections import Counter
 from nltk.corpus import stopwords
 from nltk.tokenize import wordpunct_tokenize
