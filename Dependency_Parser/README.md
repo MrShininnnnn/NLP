@@ -17,7 +17,7 @@ A dependency parser model based on transitions extracted from trees in each sent
 		|trees (original tree structure data set)
 ## Vocabulary Creation for Features
 ```
-python2 src/gen_vocab.py trees/train.conll data/vocabs
+$ python2 src/gen_vocab.py trees/train.conll data/vocabs
 ```
 ## Data Generation
 ```
