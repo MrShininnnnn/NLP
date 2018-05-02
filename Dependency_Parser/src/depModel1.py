@@ -275,6 +275,7 @@ class depModel():
 		# session run
 		with tf.Session() as sess:
 			if os.path.isfile(CHECK):
+				print('A checkpoint is found under tmp folder. If you want to retrain the model, please clear the tmp folder first!')
 				pass
 			else:
 				sess.run(tf.global_variables_initializer())
@@ -364,8 +365,10 @@ def main():
 	input_p = os.path.abspath(sys.argv[1])
 	output_p = os.path.abspath(sys.argv[2])
 	m = depModel()
-	# m.trainer()
-	Decoder(m.score, m.actions).parse(input_p, output_p)
+	# To train model
+	m.trainer()
+	# To decode file input_p and output as output_p
+	# Decoder(m.score, m.actions).parse(input_p, output_p)
 
 if __name__ == '__main__':
 	main()
