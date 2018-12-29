@@ -1,5 +1,5 @@
 # Sequence Learning for Semantic Parsing
-The project is for the semantic parsing task. The model aims to parse a natural language sentence to a semantic representation
+The project is for the semantic parsing task. The model aims to parse a natural language sentence to a semantic representation.
 ## Getting Started
 The following instructions will ensure a copy of the project can run well on any local machine for development and testing purposes. 
 ### Prerequisites
@@ -44,6 +44,8 @@ Under the root directory, simply run:
 ```
 :$ python3 train.py
 ```
+## Result
+In this project, the model is tested on a popular benchmark dataset, JOBs, which contains 640 pairs of a sentence and its logic representation. The final result of the model should achieve around 90% sequence accuracy.
 ## Author
 * **Ning Shi** - Shining
 * **ning.shi@nyu.edu**
