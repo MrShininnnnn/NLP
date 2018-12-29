@@ -13,6 +13,7 @@ $ pip3 install -r requirement.txt
 ```
 ### Directory Structure
 Here is a graph to show the entire folder structure.
+```
 Semantic_Parsing/
 ├── README.md
 ├── requirements.txt
@@ -31,6 +32,7 @@ Semantic_Parsing/
 │       ├── eva.py
 │       └── load.py
 └── train.py
+```
 ### Folder List
 * src/model - model graphs
 * src/source/data - required data
