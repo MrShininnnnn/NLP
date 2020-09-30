@@ -1,9 +1,9 @@
 # Dependency Parser
 A dependency parser model based on transitions extracted from trees in each sentence.
 ## Dependencies
-+ Python 2.7.10 & 3.6.4
-+ Numpy 1.14.1 
-+ Tensorflow 1.6.0
++ python>=3.6.4
++ numpy>=1.14.1 
++ tensorflow>=1.15.4
 ## Directory Structure
 	|root
 		|data (train set, dev set, and vocabs set)
